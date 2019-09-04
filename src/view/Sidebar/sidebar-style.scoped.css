@@ -1,0 +1,15 @@
+.sidebar{
+   /*border-right: 1px black solid;*/
+   width: 250px;
+   height: 100%;
+   float: left;
+}
+
+li{
+   border-bottom: 1px black solid;
+   margin: 10px 0;
+}
+>>> .route-active{
+   color: #000;
+   font-weight: 700;
+}
