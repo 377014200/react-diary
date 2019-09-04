@@ -1,1 +1,14 @@
 # Created by .ignore support plugin (hsz.mobi)
+### .gitignore template
+.DS_Store
+.idea/
+node_modules/
+dist/
+npm-debug.log
+yarn-error.log
+test/unit/coverage
+test/e2e/reports
+selenium-debug.log
+.netlify
+.*.dockerfile
+pom.xml
