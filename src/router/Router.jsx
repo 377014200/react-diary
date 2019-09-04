@@ -34,6 +34,10 @@ export default function Router() {
                   path='/context'
                   component={lazy(() => import(/* webpackChunkName: "context"*/ 'view/context' ))}
                />
+               <Route
+                  path='/fragments'
+                  component={lazy(() => import(/* webpackChunkName: "fragments"*/ 'view/fragments/Fragments' ))}
+               />
             </Switch>
          </Suspense>
       </div>

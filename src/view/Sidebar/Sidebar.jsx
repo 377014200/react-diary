@@ -15,9 +15,11 @@ export default class Sidebar extends Component {
                   <li><NavLink to='/suspense' activeClassName='route-active' > React.Suspense </NavLink></li>
                   <li><NavLink to='/router' activeClassName='route-active' > react-router-dom </NavLink></li>
                   <li><NavLink to='/context' activeClassName='route-active' > Context </NavLink></li>
+                  <li><NavLink to='/fragments' activeClassName='route-active' > Fragments </NavLink></li>
                </ul>
          </div>
       )
+
    }
 
 }
