@@ -2,6 +2,9 @@ import React from 'react';
 import Fieldset from 'components/Fieldset'
 import Code from 'components/Code'
 import { card1, card2, card3} from './codeCard'
+import App from 'view/context/case/app'
+
+import './context.scoped.css'
 export default function () {
 
    return (
@@ -9,17 +12,20 @@ export default function () {
          <Fieldset
             title={<h2>Context</h2>}
          >
-            <p><strong>解决组件嵌套太深而引起的组件通讯困难的解决方案</strong></p>
+            <p><strong style={{fontSize: '16px'}}>解决组件嵌套太深而引起的组件通讯困难的解决方案</strong></p>
             <a href="https://zh-hans.reactjs.org/docs/context.html#contextprovider" target='_blank'>对于更详细的介绍, 我们会去寻找失去的官网</a>
+
             <Fieldset
-               title= '案例:'
+               title= '概述:'
                legendStyle={ { textAlign: 'left'} }
             >
-               <Code>
-                  { card1 }
-               </Code>
+               <ul>
+                  <li>React.createContext: 创建一个 provider 对象的引用</li>
+                  <li>Context.provider: 发布 provider 类似于 vue 中 provider 属性</li>
+                  <li>Class.contextType: 是一个挂载到 Class 静态属性的 React.createContext, 这种只支持单一的Context,并且只限制于 Class 的组件中; 在class 的内部用 this.context 访问 project ;相当于 vue 中的 reject</li>
+                  <li>Context.Consumer: 订阅 provider 可以用在 函数式的组件 和 Class 组件中, 支持多个 Context.provider 的订阅; 相当于 vue 中的 reject</li>
+               </ul>
             </Fieldset>
-
             <Fieldset
                title= 'React.createContext'
                legendStyle={ { textAlign: 'left'} }
@@ -68,6 +74,20 @@ export default function () {
                <Code lineNumber={ false }>
                   { `<MyContext.Consumer>\n{value => /* 基于 context 值进行渲染*/}\n</MyContext.Consumer>` }
                </Code>
+            </Fieldset>
+            <Fieldset
+               title= '案例-code:'
+               legendStyle={ { textAlign: 'left'} }
+            >
+               <Code>
+                  { card1 }
+               </Code>
+            </Fieldset>
+            <Fieldset
+               title= '案例'
+               legendStyle={ { textAlign: 'left'} }
+            >
+            <App />
             </Fieldset>
          </Fieldset>
       </div>
