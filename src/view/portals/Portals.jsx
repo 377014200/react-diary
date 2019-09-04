@@ -15,6 +15,7 @@ import ReactDOM from 'react-dom'
 
 
 export default class Modal extends Component{
+
    constructor( props ){
 
       super( props )

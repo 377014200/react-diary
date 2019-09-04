@@ -18,7 +18,7 @@ export default class Subsidiary extends Component {
             <p>点击数: { this.state.clicks }</p>
             <p>
                打开浏览器开发工具
-               观察那个按钮
+               观察那个按钮(他应该在下面)
                不是 div#modal-root 的子元素吗
                使用 onClick 处理程序
             </p>
