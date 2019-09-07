@@ -1,0 +1,16 @@
+.class-name{
+   color: #41d340;
+}
+.function{
+   color: #44e5ff;
+}
+.property-access{
+     color: #c52e2e;
+}
+.code>pre code:nth-of-type(1){
+   border-right: 1px #fff dashed;
+   margin-right: 10px
+}
+.code>pre{
+   margin: 0.5em auto!important;
+}

@@ -38,6 +38,18 @@ export default function Router() {
                   path='/fragments'
                   component={lazy(() => import(/* webpackChunkName: "fragments"*/ 'view/fragments/Fragments' ))}
                />
+               <Route
+                  path='/setState'
+                  component={lazy(() => import(/* webpackChunkName: "setState"*/ 'view/setState/SetState' ))}
+               />
+               <Route
+                  path='/children'
+                  component={lazy(() => import(/* webpackChunkName: "children"*/ 'view/children/Children' ))}
+               />
+               <Route
+                  path='/cloneElement'
+                  component={lazy(() => import(/* webpackChunkName: "cloneElement"*/ 'view/cloneElement/cloneElement' ))}
+               />
             </Switch>
          </Suspense>
       </div>

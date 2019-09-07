@@ -10,16 +10,14 @@ export default class App extends Component{
 
       return   (
          <div className='container'>
-            <h1> Hello World</h1>
+            <h1> Hello React</h1>
+            <h2>小生,我怕怕</h2>
             <BrowserRouter>
                <Sidebar />
                <Router />
             </BrowserRouter>
-
-
          </div>
       )
-
 
    }
 

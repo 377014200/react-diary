@@ -1,8 +1,8 @@
-import React from 'react';
-import {PrismLight  as SyntaxHighlighter} from 'react-syntax-highlighter';
+import React, { Children } from 'react';
+import { PrismLight  as SyntaxHighlighter } from 'react-syntax-highlighter';
 import jsx from 'react-syntax-highlighter/dist/esm/languages/prism/jsx';
+import { dark } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
-import {dark} from 'react-syntax-highlighter/dist/esm/styles/prism';
 SyntaxHighlighter.registerLanguage('jsx', jsx);
 
 /*
@@ -11,30 +11,31 @@ SyntaxHighlighter.registerLanguage('jsx', jsx);
 *        ! 你可以在这查看效果: https://conorhastings.github.io/react-syntax-highlighter/demo/index.html
 *
 * */
-export default class Code extends React.Component {
+import './code-style.css'
 
-   render() {
+export default function Code( props ) {
 
-      return (
-         <div style={ this.props.style }>
-            <SyntaxHighlighter
-               showLineNumbers={ this.props.lineNumber === undefined ? true : this.props.lineNumber }
-               startingLineNumber={ 1 }
-               language={this.props.lang || 'jsx'}
-               style={ dark }
-               lineNumberStyle={{color: '#ddd', userSelect: 'none', lineHeight: '1.5'} }
-               customStyle={ { maxWidth: '900px'} }
-               wrapLines={ true }
-               lineProps={
-                  (num) => {
+   const { children } = props;
+   const codeCard = Children.toArray( children ).join('').trim();
 
-                  }
-               }>
-               { this.props.children.trim() }
-            </SyntaxHighlighter>
-         </div>
-      )
+   return (
+      <div style={ props.style } className='code'>
+         <SyntaxHighlighter
+            showLineNumbers={ props.lineNumber === undefined ? true : props.lineNumber }
+            startingLineNumber={ 1 }
+            language={ props.lang || 'jsx' }
+            style={ dark}
+            lineNumberStyle={ { color: '#ddd', userSelect: 'none', } }
+            customStyle={ { maxWidth: '800px' } }
+            wrapLines={ true }
+            lineProps={
+               ( num ) => {
 
-   }
+               }
+            }>
+            { codeCard }
+         </SyntaxHighlighter>
+      </div>
+   )
 
 }

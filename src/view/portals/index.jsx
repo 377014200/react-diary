@@ -7,24 +7,24 @@ import Code from 'components/Code'
 var card = `
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
-export default class Modal extends Component{
+export default class Modal extends Component {
    constructor( props ){
       super( props )
-      this.el = document.createElement('div');
-      this.modalRoot = document.getElementById('modal-root')
+      this.el = document.createElement( 'div' );
+      this.modalRoot = document.getElementById( 'modal-root' )
    }
    componentDidMount(){
       const { el, modalRoot } = this;
-      modalRoot.appendChild(el)
+      modalRoot.appendChild( el )
    }
    componentWillUnmount(){
       const { el, modalRoot } = this;
-      modalRoot.removeChild(el)
+      modalRoot.removeChild( el )
    }
    render(){
       return ReactDOM.createPortal( this.props.children, this.el )
    }
-}`
+}`;
 
 export default function () {
 
