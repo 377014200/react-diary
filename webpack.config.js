@@ -3,7 +3,7 @@ const path = require('path');
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require( 'clean-webpack-plugin' );
-const devMode = true
+const devMode = true;
 
 module.exports = {
 
