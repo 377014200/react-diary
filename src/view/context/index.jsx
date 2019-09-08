@@ -3,7 +3,7 @@ import Fieldset from 'components/Fieldset'
 import Code from 'components/Code'
 import { card1, card2, card3} from './codeCard'
 import App from 'view/context/case/app'
-
+import EventMode from './case/callMode'
 import './context.scoped.css'
 export default function () {
 
@@ -84,6 +84,10 @@ export default function () {
                legendStyle={ { textAlign: 'left'} }
             >
             <App />
+            </Fieldset>
+
+            <Fieldset title="使用了事件的方式">
+               <EventMode />
             </Fieldset>
          </Fieldset>
       </div>

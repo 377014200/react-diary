@@ -81,3 +81,33 @@ async componentDidMount() {
    console.log( this.state.counter ); // =>10
    this.setState( { counter: this.state.counter + 10 } )
 }`;
+
+export const codeCard8 = ` 
+export default class App extends React.PureComponent{
+   state = {
+      n: 0,
+      length: 0
+   };
+   render() {
+    
+      const handleClick = (e) => {
+         this.setState( 
+            // 这里不会触发 App 组件的更新; 如果是继承 React.Component 的组件会正常工作
+            // 在这里正确的写法是 { n: this.state.n + 1 },  
+            { n: ++this.state.n  },  
+            // 然而传递给子组件的的值是正确的
+            () => call.emit('click', (length)=> this.state.n%length )  
+         )
+      };
+      return (
+         <Fieldset>
+            <button onClick={ handleClick }>
+               点鸡 children_d 的字体颜色会变
+            </button>
+            <p> { this.state.n }</p>
+            <Children_a />
+         </Fieldset>
+      )
+   }
+}
+`;

@@ -3,7 +3,16 @@ import React from 'react';
 import Fieldset from "@/components/Fieldset";
 import Code from "@/components/Code";
 import Case from './Case'
-import { codeCard7, codeCard6, codeCard5, codeCard4, codeCard3, codeCard2, codeCard  } from './codeCard'
+import {
+   codeCard7,
+   codeCard6,
+   codeCard5,
+   codeCard4,
+   codeCard3,
+   codeCard2,
+   codeCard,
+   codeCard8
+} from './codeCard'
 
 
 export default function SetState() {
@@ -60,6 +69,12 @@ export default function SetState() {
          >
             <p>这里面是个计数器</p>
             <Case increment={ 101 } />
+         </Fieldset>
+
+         <Fieldset title={<h3>修改 state 状态时不要在继承与 React.pureComponent 的组件中使用 ++ 运算符</h3>}>
+            <Code>
+               { codeCard8 }
+            </Code>
          </Fieldset>
       </Fieldset>
    )

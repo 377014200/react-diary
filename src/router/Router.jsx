@@ -50,6 +50,26 @@ export default function Router() {
                   path='/cloneElement'
                   component={lazy(() => import(/* webpackChunkName: "cloneElement"*/ 'view/cloneElement/cloneElement' ))}
                />
+               <Route
+                  path='/mixins'
+                  component={lazy(() => import(/* webpackChunkName: "mixins"*/ 'view/mixins/mixins' ))}
+               />
+               <Route
+                  path='/props'
+                  component={lazy(() => import(/* webpackChunkName: "props"*/ 'view/props/props' ))}
+               />
+               <Route
+                  path='/contorlledAndUncontorlled'
+                  component={lazy(() => import(/* webpackChunkName: "contorlledAndUncontorlled"*/ 'view/contorlledAndUncontorlled' ))}
+               />
+               <Route
+                  path='/pureComponent'
+                  component={lazy(() => import(/* webpackChunkName: "pureComponent"*/ 'view/pureComponent/PureComponent' ))}
+               />
+               <Route
+                  path='/memo'
+                  component={lazy(() => import(/* webpackChunkName: "memo"*/ 'view/memo/memo' ))}
+               />
             </Switch>
          </Suspense>
       </div>

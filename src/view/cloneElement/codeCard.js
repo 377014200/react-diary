@@ -6,44 +6,67 @@ React.cloneElement(
 )`;
 
 export const codeCard1 = `
-import React, { Children, cloneElement } from 'react';
+import React, { Children, cloneElement, Component } from 'react';
+export function Row(props) {
 
-export function Row( props ) { // slot 候选
    return (
-      <div 
-         className={ 'row' } 
-         style={ { textAlign: 'center' } } 
+      <div
+         className={'row'}
+         style={ {textAlign: 'center', cursor: 'pointer', color: props.color} }
+         onClick={ props.onClick }
       >
-         { props.col } 
+         { props.col }
       </div>
    )
 }
-
-export  function SlotScoped ( props ){
-   // 是否传入的 children ,是的话必须只能有一个节点,否则使用默认的
-   const children = props.children ? Children.only( props.children ) : <Row /> ;
-   const trs = props.data.map(
-      ( item, index ) =>{
-         const columns = item.map(
-            ( col, num ) =>{
-               // 不管哪种,都会给 children 传递 props
-               const colNode = cloneElement( children, { col } ); 
-               return index === 0 ? 
-                  <th key={ num }>{ colNode }</th> : 
-                  <td key={ num }>{ colNode }</td>
-               ;
+export class SlotScoped  extends Component{
+   state = {
+      _index: -1,
+   };
+   render(){
+      const { children, data } = this.props;
+      // 如果提供了插槽,只能有一个
+      const _children = children ? Children.only(children) : <Row/>;
+      const on = this.on();
+      const { _index } = this.state;
+      const trs = data.map(
+         (item, index) => {
+            const columns = item.map(
+               (col, num, row) => {
+                  const tabIndex =  index * row.length + num ;
+                  const props = { // 向插槽提供 props
+                     col , 
+                     onClick: on.click( tabIndex ), 
+                     color: tabIndex === _index ? '#fff' : '#000' 
+                  };
+                  const colNode = cloneElement(_children,  props);
+                  return index === 0 ?
+                     <th key={num}>{colNode}</th> :
+                     <td key={num}>{colNode}</td>
+                  ;
+               }
+            );
+            return <tr key={index}>{columns}</tr>
+         }
+      );
+      return (
+         <table className='slot-scoped' border="1" width="100">
+            <tbody>
+               { trs }
+            </tbody>
+         </table>
+      )
+   }
+   on(){    
+      const vm = this;
+      return {
+         click: function ( clickIndex ) {            
+            return ()=>{
+               vm.setState( { _index: clickIndex } )
             }
-         );
-         return <tr key={index}>{ columns }</tr>
+         }
       }
-   );
-   return (
-      <table className='slot-scoped' border="1" width="100" >
-         <tbody>
-            { trs }
-         </tbody>
-      </table>
-   )
+   }
 }`;
 
 export const codeCard2 = `

@@ -1,0 +1,26 @@
+
+body{
+   background-color: #65f5ef
+}
+
+.red{
+   color: #c7254e
+}
+fieldset{
+   padding: 20px!important;
+}
+#root{
+   width: 80%;
+   margin: 20px 30px;
+}
+p{
+   font-size: 14px;
+   text-shadow: 0 -1px 3px #f5f5f5;
+   margin: 15px;
+}
+
+
+.warning{
+   color: rgb(132, 10, 10);
+   font-size: 16px;
+}
