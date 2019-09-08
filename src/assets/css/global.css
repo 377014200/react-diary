@@ -5,7 +5,6 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 }
 body{
    font-family: 'Avenir', Helvetica, Arial, sans-serif;
-   background-color: #65f5ef
 }
 img {
    border: 0
@@ -150,19 +149,4 @@ blockquote{
    border: 2px solid #efefef;
    padding: 5px 10px ;
    margin: 10px;
-}
-.red{
-   color: #c7254e
-}
-fieldset{
-   padding: 20px;
-}
- #root{
-    width: 80%;
-    margin: 20px 30px;
- }
-p{
-   font-size: 14px;
-   text-shadow: 0 -1px 3px #f5f5f5;
-   margin: 15px;
 }
