@@ -14,7 +14,7 @@ module.exports = {
    },
    // 输出目录
    output: {
-      filename: '[name].[hash].js',  //name代表entry对应的名字; hash代表 整个app打包完成后根据内容加上hash。一旦整个文件内容变更，hash就会变化
+      filename: '[name].js',  //name代表entry对应的名字; hash代表 整个app打包完成后根据内容加上hash。一旦整个文件内容变更，hash就会变化
       path: path.join(__dirname, './dist'), // 打包好之后的输出路径
       publicPath: '/' // 静态资源文件引用时的路径（加在引用静态资源前面的）
    },
@@ -23,6 +23,7 @@ module.exports = {
       contentBase: path.resolve( __dirname, './public' ),
       // index: resolve('./public/index.html'),
       port: '9090',
+      host: '0.0.0.0',
       // hot: true,
       // hotOnly: false,
       // 告诉开发服务器查看由开发服务器提供的文件。contentBase选项。默认情况下是禁用的。启用时，文件更改将触发重新加载整个页面。
