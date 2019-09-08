@@ -10,7 +10,7 @@ export default class Fieldset extends Component {
       const _legendStyle = {
          textAlign: title && title.type === 'h2' ? 'center' : 'left',
       };
-      console.log( title.type === 'h2')
+
       return (
          <div style={ { margin:'10px 0', width: '100%'} }>
             <fieldset>
