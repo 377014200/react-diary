@@ -1,7 +1,18 @@
 
-import React, { Component } from 'react'
+import React, { Component, memo } from 'react'
 import {ThemeContext, themes} from './theme-context';
 import ThemeTogglerButton from './theme-toggler-button';
+
+
+const Content = memo(function Content() {
+   console.log('in Content')
+
+   return (
+      <div className='content'>
+         <ThemeTogglerButton />
+      </div>
+   );
+}) ;
 
 export default class App extends Component {
    constructor(props) {
@@ -27,20 +38,12 @@ export default class App extends Component {
       // 整个 state 都被传递进 provider
       console.log('in app')
       return (
-         <ThemeContext.Provider value={this.state}>
+         <ThemeContext.Provider value={this.state} aa={'3333'}>
             <Content />
          </ThemeContext.Provider>
       );
    }
 }
 
-function Content() {
-   console.log('in Content')
 
-   return (
-      <div className='content'>
-         <ThemeTogglerButton />
-      </div>
-   );
-}
 
