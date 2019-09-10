@@ -70,6 +70,10 @@ export default function Router() {
                   path='/memo'
                   component={lazy(() => import(/* webpackChunkName: "memo"*/ 'view/memo/memo' ))}
                />
+               <Route
+                  path='/ref'
+                  component={lazy(() => import(/* webpackChunkName: "ref"*/ 'view/ref/ref' ))}
+               />
             </Switch>
          </Suspense>
       </div>
