@@ -3,6 +3,7 @@ const path = require('path');
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require( 'clean-webpack-plugin' );
+const webpack = require('webpack');
 const devMode = true;
 
 module.exports = {
@@ -19,6 +20,7 @@ module.exports = {
       publicPath: '/' // 静态资源文件引用时的路径（加在引用静态资源前面的）
    },
 
+   devtool: "cheap-module-eval-source-map",
    devServer: {
       contentBase: path.resolve( __dirname, './public' ),
       // index: resolve('./public/index.html'),
@@ -82,6 +84,9 @@ module.exports = {
       new CleanWebpackPlugin(),
       new HtmlWebpackPlugin({
          template: path.join (__dirname ,'public/index.html')
+      }),
+      new webpack.ProvidePlugin({
+         React: 'react'
       })
    ],
 
@@ -99,7 +104,10 @@ module.exports = {
          router: path.resolve( __dirname , 'src/router' ),
          store: path.resolve( __dirname , 'src/store' ),
       }
-
-   }
+   },
+   // externals: {
+   //    react: { root: 'React' },
+   //    'react-dom' :{ root: 'ReactDOM' }
+   // }
 
 };
