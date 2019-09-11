@@ -28,7 +28,7 @@ export default function () {
          </Fieldset>
          <Fieldset title={<h3>API</h3>}>
             <p><strong>在 React 16.3 版本引入的 React.createRef() API。如果你正在使用一个较早版本的 React，我们推荐你使用回调形式的 refs。</strong></p>
-            <Fieldset title={<strong>React.createRef() 创建 ref</strong>}>
+            <Fieldset title={<strong>React.createRef</strong>}>
                <p> React.createRef 源码</p>
                <p> 只是返回了一个封闭的对象, 然后有个 current 属性, 这个属性是必须的; </p>
                <Code> { codeCard4 }</Code>
@@ -41,15 +41,13 @@ export default function () {
                <MyComponent />
 
             </Fieldset>
-            <Fieldset title='React.forwardRef( callback ) 转发'>
+            <Fieldset title={ <strong>React.forwardRef( callback )</strong> }>
                <a href="https://react.docschina.org/docs/forwarding-refs.html#forwarding-refs-in-higher-order-components" target='_blank'>
-                  去官网看案例把, 使用这个 API 回调太多可读性真菜
+                  去官网看案例把, 使用这个 API 回调太多可读性真菜, 简直就是一段痛苦的回忆;
                </a>
                <ForwardRef refInFancyButton={ forward => console.log( forward ) } test='test' />
                <p>这样做也可以实现转发</p>
-               <Code>
-                  { codeCard5 }
-               </Code>
+               <Code>{ codeCard5 }</Code>
             </Fieldset>
          </Fieldset>
 
