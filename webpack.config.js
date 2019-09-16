@@ -30,7 +30,7 @@ module.exports = {
       // hotOnly: false,
       // 告诉开发服务器查看由开发服务器提供的文件。contentBase选项。默认情况下是禁用的。启用时，文件更改将触发重新加载整个页面。
       watchContentBase: true,
-      clientLogLevel: 'silent',
+      clientLogLevel: 'trace',
       historyApiFallback: {
          index: '/'
       },
@@ -43,6 +43,20 @@ module.exports = {
             test: /.js(x)?$/,
             include: /node_madules[\\/]react-syntax-highlighter|src/,
             loader: 'babel-loader'
+         },
+         // all files with a `.ts` or `.tsx` extension will be handled by `ts-loader`
+         {
+            test: /\.ts(x?)$/,
+            exclude: /node_modules/,
+            use: [
+               'babel-loader',
+               'ts-loader'
+            ]
+         },
+         { // 所有输出”.js'的文件将有任何源代码重新处理的源代码地图加载器'。
+            enforce: "pre",
+            test: /\.js$/,
+            loader: "source-map-loader"
          },
          // css
          {
@@ -93,7 +107,7 @@ module.exports = {
    resolve:{
       aliasFields: ['browser'],
       // 尝试按顺序解析这些扩展。
-      extensions: ['.jsx', '.js', '.json'],
+      extensions: [ '.ts', '.tsx', '.jsx', '.js', '.json'],
       alias: {
          '@': path.resolve( __dirname , 'src' ),
          CSS: path.resolve( __dirname , 'src/assets/css' ),
