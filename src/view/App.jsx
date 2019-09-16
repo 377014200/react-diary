@@ -4,7 +4,10 @@ import Router from 'router/Router'
 import Sidebar from 'view/sidebar/Sidebar'
 import { BrowserRouter } from 'react-router-dom';
 
+import "CSS/global.css"
 import './app-style.css'
+
+
 export default class App extends Component{
 
    render(){

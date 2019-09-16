@@ -1,5 +1,5 @@
 
-import { createRef, Component, forwardRef } from 'react';
+import { Component } from 'react';
 
 export default class MyComponent extends Component {
 
@@ -38,7 +38,7 @@ export default class MyComponent extends Component {
 
          },
          click(){
-            console.log(vm.myRef)
+            console.log(vm)
          }
       };
       if ( motion in event) {

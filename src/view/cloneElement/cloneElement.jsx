@@ -2,7 +2,7 @@ import React from 'react'
 import Fieldset from "@/components/Fieldset";
 import Code from "@/components/Code";
 import { SlotScoped, Row } from "@/view/cloneElement/case/slotScoped";
-import { codeCard, codeCard1, codeCard2 } from "@/view/cloneElement/codeCard";
+import { codeCard, codeCard1, codeCard2, codeCard3 } from "@/view/cloneElement/codeCard";
 
 
 export default function ( props ) {
@@ -12,15 +12,20 @@ export default function ( props ) {
       [ 4, 5, 6 ],
       [ 7, 8, 9 ]
    ];
-   console.log(<h2>'wqe'</h2>)
+
    return (
       <Fieldset
          title={<h2>React.cloneElement</h2>}
       >
-         <p style={ { color: 'rgb(132, 10, 10)', fontSize: '16px' } }><strong>克隆组件: 这个 API 可以实现 vue 中作用域插槽一样的功能</strong></p>
+         <p><strong>克隆组件: 这个 API 可以实现 vue 中作用域插槽一样的功能</strong></p>
          <Code>
             { codeCard }
          </Code>
+         <Fieldset title={<h3>注意</h3>}>
+            <p className='warning'>你在使用 '反向继承' 这种高级操作的时候 cloneElement 会有不一样的表现行为</p>
+            <p className='warning'>子类和父类是共享自身的属性(比如, state 和 props</p>
+            <Code>{ codeCard3}</Code>
+         </Fieldset>
          <Fieldset
             title={ <h3>这是一个类似于 vue 插槽的代码 </h3> }
          >

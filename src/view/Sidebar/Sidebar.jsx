@@ -24,8 +24,9 @@ export default class Sidebar extends Component {
                   <li><NavLink to='/context' activeClassName='route-active' > Context </NavLink></li>
                   <li><NavLink to='/fragments' activeClassName='route-active' > Fragments </NavLink></li>
                   <li><NavLink to='/mixins' activeClassName='route-active' > mixins </NavLink></li>
+                  <li><NavLink to='/HOC' activeClassName='route-active' > High order component </NavLink></li>
                   <li><NavLink to='/ref' activeClassName='route-active' > ref </NavLink></li>
-
+                  <li><NavLink to='/room' activeClassName='route-active' > My Room </NavLink></li>
                </ul>
          </div>
       )
