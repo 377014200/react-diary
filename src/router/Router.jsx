@@ -74,6 +74,14 @@ export default function Router() {
                   path='/ref'
                   component={lazy(() => import(/* webpackChunkName: "ref"*/ 'view/ref/ref' ))}
                />
+               <Route
+                  path='/HOC'
+                  component={lazy(() => import(/* webpackChunkName: "ref"*/ 'view/HOC/hoc' ))}
+               />
+               <Route
+                  path='/room'
+                  component={lazy(() => import(/* webpackChunkName: "room"*/ 'view/room/PropsTypesTs' ))}
+               />
             </Switch>
          </Suspense>
       </div>
