@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "noImplicitAny": true,
+    "removeComments": true,
+    "preserveConstEnums": true,
+    "downlevelIteration": true,
+    "jsx": "react",
+    "outDir": "",
+    "module": "esnext",
+    "target": "es5",
+    "allowSyntheticDefaultImports": true,
+    "sourceMap": true,
+    "rootDir": "src",
+    "lib": ["dom", "es2015", "es2016", "es2017", "esnext"],
+    "experimentalDecorators": true,
+    "noEmitOnError": true,
+    "noImplicitThis": true,
+    "skipLibCheck": true,
+    "suppressImplicitAnyIndexErrors": true,
+  },
+  "include": [
+    "src"
+  ]
+}
