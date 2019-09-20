@@ -1,5 +1,5 @@
-import React, { lazy, Suspense } from 'react'
-import { Route, Switch } from 'react-router-dom'
+import React, {lazy, Suspense, memo} from 'react'
+import {Route, Switch, Redirect} from 'react-router-dom'
 
 import './router-box-style.scoped.css'
 
@@ -8,16 +8,17 @@ export default function Router() {
    return (
       <div className='router'>
          <Suspense fallback={<div>Loading...</div>}>
+            <Redirect to="/hook"/>
             <Switch>
                <Route
                   exact
                   path='/'
                   component={lazy(() => import(/* webpackChunkName: "basic"*/ 'view/basicOperation' ))}
                />
-               <Route
-                  path='/hook'
-                  component={lazy(() => import(/* webpackChunkName: "hook"*/ 'view/Lifecycle hook functions' ))}
-               />
+               <Route path='/hook'>
+                  <Route path='/hook' exact component={lazy(() => import(/* webpackChunkName: "hook"*/ 'view/Lifecycle hook functions' ))}/>
+                  <Route path='/hook/aaa' render={() => <h1>这是子路由 aaa</h1>} key={456}/>
+               </Route>
                <Route
                   path='/portals'
                   component={lazy(() => import(/* webpackChunkName: "portals" */ 'view/portals' ))}
@@ -76,11 +77,15 @@ export default function Router() {
                />
                <Route
                   path='/HOC'
-                  component={lazy(() => import(/* webpackChunkName: "ref"*/ 'view/HOC/hoc' ))}
+                  component={lazy(() => import(/* webpackChunkName: "hoc"*/ 'view/HOC/hoc' ))}
                />
                <Route
-                  path='/room'
-                  component={lazy(() => import(/* webpackChunkName: "room"*/ 'view/room/PropsTypesTs' ))}
+                  path='/propTypes'
+                  component={lazy(() => import(/* webpackChunkName: "propTypesChecking"*/ 'view/propTypesChecking/index' ))}
+               />
+               <Route
+                  path='/strictMode'
+                  component={lazy(() => import(/* webpackChunkName: "strictMode"*/ 'view/strictMode/StrictMode' ))}
                />
             </Switch>
          </Suspense>
