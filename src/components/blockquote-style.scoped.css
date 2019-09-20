@@ -1,0 +1,10 @@
+>>> li, >>> > p, >>> div{
+   border-bottom: 1px black solid;
+   padding: 10px ;
+   text-indent: 32px;
+   font-size: 14px;
+}
+
+>>> p{
+   margin: 0;
+}
