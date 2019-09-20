@@ -10,7 +10,7 @@ import Fieldset from 'components/Fieldset'
 export default class Updated extends Component {
 
    constructor( props ){
-      super( props )
+      super( props );
       this.state = {
          fieldset: '是个不错的标签'
       }

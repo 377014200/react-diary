@@ -4,11 +4,11 @@
 *
 * */
 
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import Fieldset from 'components/Fieldset'
 
 
-export default class Mount extends Component {
+export default class Mount extends PureComponent {
    // 1
    constructor(props) {
       super(props);
