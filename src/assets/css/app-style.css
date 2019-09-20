@@ -25,3 +25,17 @@ p{
    color: rgb(132, 10, 10);
    font-size: 16px;
 }
+
+blockquote{
+   display: block;
+   padding: 16px;
+   margin: 0 0 24px;
+   border-width: 3px;
+   border-left: 5px solid #3a2f7a;
+   border-right: 5px solid #3a2f7a;
+   background: #a4d0eb;
+   overflow: auto;
+   word-wrap: break-word;
+   color: rgba(0,0,0,.9);
+   text-shadow: 0 -1px 3px #f5f5f5;
+}
