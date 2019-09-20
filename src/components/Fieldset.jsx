@@ -2,6 +2,9 @@ import React, {Component} from 'react'
 
 export default class Fieldset extends Component {
 
+   static propTypes = {
+      children: PropTypes.node
+   };
 
 
    render() {
