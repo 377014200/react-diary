@@ -5,8 +5,7 @@ import Sidebar from 'view/sidebar/Sidebar'
 import { BrowserRouter } from 'react-router-dom';
 
 import "CSS/global.css"
-import './app-style.css'
-
+import 'assets/css/app-style.css'
 
 export default class App extends Component{
 
