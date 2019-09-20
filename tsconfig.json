@@ -1,17 +1,17 @@
 {
   "compilerOptions": {
+    "allowJs": true,
     "noImplicitAny": true,
     "removeComments": true,
     "preserveConstEnums": true,
     "downlevelIteration": true,
-    "jsx": "react",
-    "outDir": "",
-    "module": "esnext",
+    "jsx": "preserve",
+    "module": "ESNext",
     "target": "es5",
     "allowSyntheticDefaultImports": true,
     "sourceMap": true,
-    "rootDir": "src",
-    "lib": ["dom", "es2015", "es2016", "es2017", "esnext"],
+    "rootDir": "/",
+    "lib": ["dom", "es2015", "es2016", "es2017", "ESNext"],
     "experimentalDecorators": true,
     "noEmitOnError": true,
     "noImplicitThis": true,
@@ -20,5 +20,9 @@
   },
   "include": [
     "src"
-  ]
+  ],
+  "baseUrl": "./",
+  "paths": {
+    "@": ["src"]
+  }
 }
