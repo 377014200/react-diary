@@ -100,7 +100,8 @@ module.exports = {
          template: path.join (__dirname ,'public/index.html')
       }),
       new webpack.ProvidePlugin({
-         React: 'react'
+         React: 'react',
+         PropTypes: 'prop-types'
       })
    ],
 
@@ -117,6 +118,8 @@ module.exports = {
          components: path.resolve( __dirname , 'src/components' ),
          router: path.resolve( __dirname , 'src/router' ),
          store: path.resolve( __dirname , 'src/store' ),
+         assets: path.resolve( __dirname , 'src/assets' ),
+         HOC: path.resolve( __dirname , 'src/components/HOC' ),
       }
    },
    // externals: {
