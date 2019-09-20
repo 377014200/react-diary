@@ -4,7 +4,8 @@ import Code from 'components/Code'
 import { card1, card2, card3} from './codeCard'
 import App from 'view/context/case/app'
 import EventMode from './case/callMode'
-import './context.scoped.css'
+import 'assets/css/app.scoped.css'
+
 export default function () {
 
    return (
