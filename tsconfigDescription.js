@@ -23,7 +23,7 @@
 // --checkJs	                                                boolean	                        false	                        在.js文件中报告错误。与--allowJs配合使用。
 // <<<
 // --declaration
-// -d	                                                         boolean	                        false	生成相应的.d.ts文件。
+// -d	                                                         boolean	                        false	                        生成相应的.d.ts文件。
 // >>>
 // --declarationDir	                                       string	 	                                                      生成声明文件的输出路径。
 // --diagnostics	                                             boolean	                        false	                        显示诊断信息。
