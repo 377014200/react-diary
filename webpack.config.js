@@ -15,7 +15,7 @@ module.exports = {
    },
    // 输出目录
    output: {
-      filename: '[name].js',  //name代表entry对应的名字; hash代表 整个app打包完成后根据内容加上hash。一旦整个文件内容变更，hash就会变化
+      filename: '[name].js',
       path: path.join(__dirname, './dist'), // 打包好之后的输出路径
       publicPath: '/' // 静态资源文件引用时的路径（加在引用静态资源前面的）
    },
@@ -34,6 +34,8 @@ module.exports = {
       historyApiFallback: {
          index: '/'
       },
+      // 当存在编译器错误或警告时，在浏览器中显示全屏覆盖。如果只想显示编译器错误:
+      overlay: true
    },
 
    module:{
@@ -46,7 +48,7 @@ module.exports = {
          },
          // all files with a `.ts` or `.tsx` extension will be handled by `ts-loader`
          {
-            test: /\.ts(x?)$/,
+            test: /\.ts(x)?$/,
             exclude: /node_modules/,
             use: [
                'babel-loader',
