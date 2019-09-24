@@ -1,10 +1,11 @@
-import {signComponentName} from './tool'
+import { signComponentName } from './tool'
 
 function shouldRouterUpdate(path) {
 
    return function (MenuComponent) {
 
-      class ShouldRouterUpdate extends MenuComponent {
+      @signComponentName('ShouldRouterUpdate', MenuComponent)
+       class ShouldRouterUpdate extends MenuComponent {
          shouldComponentUpdate() {
 
             if (window.location.pathname === path) return false;
@@ -12,8 +13,6 @@ function shouldRouterUpdate(path) {
 
          }
       }
-
-      ShouldRouterUpdate.displayNmae = signComponentName('ShouldRouterUpdate', MenuComponent);
       return ShouldRouterUpdate
 
    }
