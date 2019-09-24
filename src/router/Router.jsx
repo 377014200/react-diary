@@ -87,6 +87,10 @@ export default function Router() {
                   path='/strictMode'
                   component={lazy(() => import(/* webpackChunkName: "strictMode"*/ 'view/strictMode/StrictMode' ))}
                />
+               <Route
+                  path='/redux'
+                  component={lazy(() => import(/* webpackChunkName: "redux"*/ 'view/reducer' ))}
+               />
             </Switch>
          </Suspense>
       </div>
