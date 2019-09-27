@@ -3,6 +3,7 @@ const path = require('path');
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require( 'clean-webpack-plugin' );
+const MyWebpackPlugin = require( './bundle/plugin/MyWebpckPugin');
 const webpack = require('webpack');
 const devMode = true;
 
@@ -104,7 +105,8 @@ module.exports = {
       new webpack.ProvidePlugin({
          React: 'react',
          PropTypes: 'prop-types'
-      })
+      }),
+      new MyWebpackPlugin()
    ],
 
    resolve:{
