@@ -2,7 +2,7 @@ import * as AT from '../actionsTypes';
 import warehouse, { selectorsTypes as ST } from '../state';
 
 export default {
-   [ST.visibilityFilter]( state = warehouse .visibilityFilter, action ) {
+   [ST.visibilityFilter]( state = warehouse.visibilityFilter, action ) {
 
       const visibilityArray = ['SHOW_ALL', 'SHOW_COMPLETED', 'SHOW_ACTIVE'];
       const visibilityItem = visibilityArray.includes( action.filter ) ? action.filter : state;
