@@ -3,31 +3,18 @@ import './blockquote-style.scoped.css';
 
 export default class Blockquote extends PureComponent {
 
-   render(){
+   render() {
+
       const childrens = Children.toArray( this.props.children );
+
       return (
          <blockquote>
             { childrens }
          </blockquote>
-      )
+      );
+
    }
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
