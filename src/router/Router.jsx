@@ -8,7 +8,7 @@ export default function Router() {
    return (
       <div className='router'>
          <Suspense fallback={<div>Loading...</div>}>
-            <Redirect to="/hook"/>
+            {/*<Redirect to="/hook"/>*/}
             <Switch>
                <Route
                   exact
@@ -89,7 +89,19 @@ export default function Router() {
                />
                <Route
                   path='/redux'
-                  component={lazy(() => import(/* webpackChunkName: "redux"*/ 'view/reducer' ))}
+                  component={lazy(() => import(/* webpackChunkName: "redux"*/ 'view/react-redux and redex/reducer' ))}
+               />
+               <Route
+                  path='/RX'
+                  component={lazy(() => import(/* webpackChunkName: "RX"*/ 'view/RX' ))}
+               />
+               <Route
+                  path='/learn'
+                  component={lazy(() => import(/* webpackChunkName: "learn"*/ 'view/Learn to stand' ))}
+               />
+               <Route
+                  path='/reactRedux'
+                  component={lazy(() => import(/* webpackChunkName: "react-redux"*/ 'view/react-redux and redex/react-redux/ReactRedux' ))}
                />
             </Switch>
          </Suspense>
