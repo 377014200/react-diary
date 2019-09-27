@@ -1,19 +1,18 @@
-import React from 'react'
-import Fieldset from 'components/Fieldset'
-import Code from "@/components/Code";
-import {codeCard, codeCard1, codeCard2} from "@/view/react-router-dom/codeCard";
-import Blockquote from "@/components/Blockquote";
-import shouldRouterUpdate from "HOC/shouldRouterUpdate";
+import React from 'react';
+import Fieldset from 'components/Fieldset';
+import Code from '@/components/Code';
+import { codeCard, codeCard1, codeCard2 } from '@/view/react-router-dom/codeCard';
+import Blockquote from '@/components/Blockquote';
 
-@shouldRouterUpdate( '/router' )
+
 export default class ReactRouterDom extends React.Component {
 
    render() {
 
       return (
          <Fieldset title={<h2>react-router-dom</h2>}>
-            <a href="https://blog.csdn.net/debbyDeng/article/details/84555817" target='_blank'> 寻找原文 </a>
-            <a href="https://reacttraining.com/react-router/web/guides/quick-start" target='_blank'> 官网地址 </a>
+            <a href='https://blog.csdn.net/debbyDeng/article/details/84555817' target='_blank'> 寻找原文 </a>
+            <a href='https://reacttraining.com/react-router/web/guides/quick-start' target='_blank'> 官网地址 </a>
             <Fieldset title={<h3>&#60;BrowserRouter&#62;</h3>}>
                <p><strong>&#60;Router&#62;的一种，通过使用HTML5提供的history
                   API(pushState,replaceState,propstate)机制来维持页面UI同RUL的统一</strong></p>
@@ -127,9 +126,9 @@ export default class ReactRouterDom extends React.Component {
                   <ul>
                      <li>
                         <p><strong>Route render methods</strong></p>
-                        <p><strong style={{color: '#3498d5'}}>&#60;Route component&#62;</strong></p>
-                        <p><strong style={{color: '#3498d5'}}>&#60;Route render&#62;</strong></p>
-                        <p><strong style={{color: '#3498d5'}}>&#60;Route children&#62;</strong></p>
+                        <p><strong style={{ color: '#3498d5' }}>&#60;Route component&#62;</strong></p>
+                        <p><strong style={{ color: '#3498d5' }}>&#60;Route render&#62;</strong></p>
+                        <p><strong style={{ color: '#3498d5' }}>&#60;Route children&#62;</strong></p>
                         <p>以上适用于不同的环境，每次只能用其中一种方法，component是最常用的</p>
                      </li>
                      <li><strong>component: </strong>当传递component渲染UI时，router将会用React.createElement来将组件封装成一个新的React
@@ -194,9 +193,10 @@ export default class ReactRouterDom extends React.Component {
                </Blockquote>
             </Fieldset>
          </Fieldset>
-      )
+      );
 
    }
-};
+
+}
 
 
