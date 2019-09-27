@@ -16,6 +16,7 @@ export default class Sidebar extends Component {
                   <li><NavLink to='/props' activeClassName='route-active' > props </NavLink></li>
                   <li><NavLink to='/children' activeClassName='route-active' > props.children </NavLink></li>
                   <li><NavLink to='/cloneElement' activeClassName='route-active' > React.cloneElement </NavLink></li>
+                  <li><NavLink to='/fragments' activeClassName='route-active' > React.Fragment </NavLink></li>
                   <li><NavLink to='/memo' activeClassName='route-active' > React.memo </NavLink></li>
                   <li><NavLink to='/pureComponent' activeClassName='route-active' > React.PureComponent </NavLink></li>
                   <li><NavLink to='/suspense' activeClassName='route-active' > React.Suspense </NavLink></li>
@@ -23,13 +24,15 @@ export default class Sidebar extends Component {
                   <li><NavLink to='/hook' activeClassName='route-active'> 生命周期钩子函数 </NavLink></li>
                   <li><NavLink to='/portals' activeClassName='route-active' > ReactDOM.createPortal </NavLink></li>
                   <li><NavLink to='/router' activeClassName='route-active' > react-router-dom </NavLink></li>
+                  <li><NavLink to='/reactRedux' activeClassName='route-active' > react-redux </NavLink></li>
                   <li><NavLink to='/redux' activeClassName='route-active' > redux </NavLink></li>
+                  <li><NavLink to='/RX' activeClassName='route-active' > RX </NavLink></li>
                   <li><NavLink to='/context' activeClassName='route-active' > Context </NavLink></li>
-                  <li><NavLink to='/fragments' activeClassName='route-active' > Fragments </NavLink></li>
                   <li><NavLink to='/mixins' activeClassName='route-active' > mixins </NavLink></li>
                   <li><NavLink to='/HOC' activeClassName='route-active' > High order component </NavLink></li>
                   <li><NavLink to='/ref' activeClassName='route-active' > ref </NavLink></li>
                   <li><NavLink to='/propTypes' activeClassName='route-active' > 类型检查 </NavLink></li>
+                  <li><NavLink to='/learn' activeClassName='route-active' > 学习站 </NavLink></li>
                </ul>
          </div>
       )
