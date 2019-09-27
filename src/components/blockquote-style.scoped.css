@@ -1,10 +1,14 @@
->>> li, >>> > p, >>> div{
+>>> li, >>> > p, >>> > div{
    border-bottom: 1px black solid;
    padding: 10px ;
    text-indent: 32px;
-   font-size: 14px;
+   font-size: 16px;
 }
-
+>>> li:nth-of-type(1),
+>>> > p:nth-of-type(1),
+>>> >div:nth-of-type(1) {
+   border-top: 1px black solid;
+}
 >>> p{
    margin: 0;
 }
