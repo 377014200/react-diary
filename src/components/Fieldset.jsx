@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 export default class Fieldset extends Component {
 
    static propTypes = {
-      children: Propypes.node
+      children: PropTypes.node
    };
 
    render() {
