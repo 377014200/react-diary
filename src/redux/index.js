@@ -1,26 +1,19 @@
-import { createStore } from 'redux'
+import { createStore, combineReducers, applyMiddleware } from 'redux';
+import thunkMiddleware from 'redux-thunk';
+import { createLogger } from 'redux-logger';
+import reducer from './selectors';
+const loggerMiddleware = createLogger();
 
 
-function reducer( state = 0, { type } ) {
+const todoApp = combineReducers( reducer );
+const store = createStore(
+   todoApp,
+   applyMiddleware(
+      thunkMiddleware, // 允许我们 dispatch() 函数
+      loggerMiddleware // 一个很便捷的 middleware，用来打印 action 日志 )
+   )
+);
 
-   console.log( type );
-
-   return {
-
-      LOGIN: '123'
-
-   }[ type ]
-
-}
-
-const state = createStore( reducer );
-
-state.dispatch({
-   type: 'LOGIN'
-});
-
-console.log( state.getState() );
-
-
+export default store;
 
 
