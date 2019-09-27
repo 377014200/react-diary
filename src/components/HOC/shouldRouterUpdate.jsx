@@ -1,23 +1,29 @@
-import { signComponentName } from './tool'
+import { signComponentName } from './tool';
 
-function shouldRouterUpdate(path) {
+function shouldRouterUpdate( path ) {
 
-   return function (MenuComponent) {
+   return function ( MenuComponent ) {
 
-      @signComponentName('ShouldRouterUpdate', MenuComponent)
-       class ShouldRouterUpdate extends MenuComponent {
+      @signComponentName( 'ShouldRouterUpdate', MenuComponent )
+      class ShouldRouterUpdate extends MenuComponent {
+
          shouldComponentUpdate() {
 
-            if (window.location.pathname === path) return false;
-            return true
+            if ( window.location.pathname === path ) {
+
+               return false;
+
+            }
+            return true;
 
          }
-      }
-      return ShouldRouterUpdate
 
-   }
+      }
+      return ShouldRouterUpdate;
+
+   };
 
 }
 
 
-export default shouldRouterUpdate
+export default shouldRouterUpdate;
