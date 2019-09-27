@@ -1,9 +1,9 @@
 import React, { Children } from 'react';
-import { PrismLight  as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { PrismLight as SyntaxHighlighter } from 'react-syntax-highlighter';
 import jsx from 'react-syntax-highlighter/dist/esm/languages/prism/jsx';
 import { dark } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
-SyntaxHighlighter.registerLanguage('jsx', jsx);
+SyntaxHighlighter.registerLanguage( 'jsx', jsx );
 
 /*
 *     # 一个代码高亮的插件
@@ -11,12 +11,12 @@ SyntaxHighlighter.registerLanguage('jsx', jsx);
 *        ! 你可以在这查看效果: https://conorhastings.github.io/react-syntax-highlighter/demo/index.html
 *
 * */
-import './code-style.css'
+import './code-style.css';
 
 export default function Code( props ) {
 
    const { children } = props;
-   const codeCard = Children.toArray( children ).join('').trim();
+   const codeCard = Children.toArray( children ).join( '' ).trim();
 
    return (
       <div style={ props.style } className='code'>
@@ -36,6 +36,6 @@ export default function Code( props ) {
             { codeCard }
          </SyntaxHighlighter>
       </div>
-   )
+   );
 
 }
