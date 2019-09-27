@@ -1,18 +1,17 @@
-import Fieldset from "@/components/Fieldset";
-import Code from "@/components/Code";
-import { codeCard, codeCard1, codeCard2, codeCard3, codeCard4 } from "@/view/HOC/codeCard";
-import Button from "@/view/HOC/case/InheritanceInversion/Button";
-import HOCWith from "@/view/HOC/case/InheritanceInversion/HOCWith";
-import shouldRouterUpdate from "@/components/HOC/shouldRouterUpdate";
-const HocButton = HOCWith(Button);
+import Fieldset from '@/components/Fieldset';
+import Code from '@/components/Code';
+import { codeCard, codeCard1, codeCard2, codeCard3, codeCard4 } from '@/view/HOC/codeCard';
+import hOCWith from '@/view/HOC/case/InheritanceInversion/HOCWith';
+import Button from '@/view/HOC/case/InheritanceInversion/Button';
 
-@shouldRouterUpdate('/HOC')
-export default class Hoc extends React.Component{
+const HocButton = hOCWith( Button );
 
-   render(){
+export default class Hoc extends React.Component {
+
+   render() {
 
       return (
-         <div className="hoc">
+         <div className='hoc'>
             <Fieldset title={<h2>高阶组件(High order component)</h2>}>
                <Fieldset title={<h3>实现高阶组件的方法有如下两种：</h3>}>
                   <p><strong>属性代理: </strong>高阶组件通过被包裹的React组件来操作props</p>
@@ -52,13 +51,12 @@ export default class Hoc extends React.Component{
                <p>这也是利用了函数式编程的特征。可见，在React抽象的过程中，处处可见它的影子</p>
                <Fieldset title='测试案例区域'>
                   <HocButton num={123} >
-                     <Button  num={123465}/>
+                     <Button num={123465}/>
                   </HocButton>
                </Fieldset>
-
             </Fieldset>
          </div>
-      )
+      );
 
    }
 
