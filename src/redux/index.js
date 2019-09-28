@@ -1,19 +1,40 @@
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import thunkMiddleware from 'redux-thunk';
 import { createLogger } from 'redux-logger';
-import reducer from './selectors';
+import sliceReducer from './selectors';
 import preloadedState from './state';
 const loggerMiddleware = createLogger();
 
-const todoApp = combineReducers( reducer );
+const rootReducer = combineReducers( sliceReducer );
 const store = createStore(
-   todoApp,
+   rootReducer,
    preloadedState,
    applyMiddleware(
       thunkMiddleware, // 允许我们 dispatch() 函数
       loggerMiddleware // 一个很便捷的 middleware，用来打印 action 日志 )
    )
 );
+
+//  hmr
+if ( module.hot ) {
+
+   module.hot.accept(
+      [
+         './selectors',
+         './state',
+         './actions',
+         './actionsTypes'
+      ],
+      function () {
+
+         console.log( 'Accepting the updated in reduex!' );
+
+         store.replaceReducer( combineReducers( sliceReducer ) );
+
+      }
+   );
+
+}
 
 export default store;
 
