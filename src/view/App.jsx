@@ -1,6 +1,5 @@
 import { Component } from 'react';
 import { BrowserRouter, Prompt } from 'react-router-dom';
-import { hot } from 'react-hot-loader';
 import './rhlConfig';
 
 import Router from 'router/Router';
@@ -21,7 +20,6 @@ function setConfirmation( message, callback ) {
    callback( true );
 
 }
-@hot( module )
 export default class App extends Component {
 
    render() {
