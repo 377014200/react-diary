@@ -13,6 +13,6 @@ module.exports = {
             "loose": true
          }
       ],
-
+      "react-hot-loader/babel",
    ]
 }
