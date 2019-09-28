@@ -1,18 +1,18 @@
 import * as AT from '../actionsTypes';
-import warehouse, { selectorsTypes as ST } from '../state';
+import { selectorsTypes as ST } from '../state';
 
+// 如何你理解 不可变 数据,  你就可以驾驭它;
 export default {
-   [ST.visibilityFilter]( state = warehouse.visibilityFilter, action ) {
+   [ST.visibilityFilter]( state = 'SHOW_ALL', action ) {
 
       const visibilityArray = ['SHOW_ALL', 'SHOW_COMPLETED', 'SHOW_ACTIVE'];
-      const visibilityItem = visibilityArray.includes( action.filter ) ? action.filter : state;
 
       return {
-         [AT.SET_VISIBILITY_FILTER]: visibilityItem
+         [AT.SET_VISIBILITY_FILTER]: visibilityArray.includes( action.filter ) ? action.filter : state
       } [ action.type ] || state;
 
    },
-   [ST.todos]( state = warehouse.todos, action ) {
+   [ST.todos]( state = [], action ) {
 
       return {
          [AT.ADD_TODO]: [
