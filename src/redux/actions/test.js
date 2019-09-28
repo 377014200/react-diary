@@ -1,5 +1,7 @@
 import * as type from '../actionsTypes';
 
+
+// 如何你是异步操作必须返回一个函数, 函数的参数是 dispatch;
 export function addTodoAsync ( value ) {
 
    return function ( dispatch ) {
