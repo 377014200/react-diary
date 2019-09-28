@@ -1,6 +1,6 @@
 const state = {
    // test
-   visibilityFilter: 'SHOW_ALL',
+   visibilityFilter: 'SHOW_COMPLETED',
    todos: []
 
 };
