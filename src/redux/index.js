@@ -22,7 +22,6 @@ if ( module.hot ) {
       [
          './selectors',
          './state',
-         './actions',
          './actionsTypes'
       ],
       function () {
