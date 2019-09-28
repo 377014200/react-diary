@@ -1,6 +1,6 @@
 import * as type from '../actionsTypes';
 
-export function addTodo ( value ) {
+export function addTodoAsync ( value ) {
 
    return function ( dispatch ) {
 
@@ -14,6 +14,11 @@ export function addTodo ( value ) {
       }, 2000 );
 
    };
+
+}
+export function addTodo ( value ) {
+
+   return { type: type.ADD_TODO, text: value };
 
 }
 
