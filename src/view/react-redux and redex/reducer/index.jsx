@@ -1,49 +1,45 @@
 import { connect } from 'react-redux';
 import Fieldset from '@/components/Fieldset';
 import assistanceRedux from '@/components/HOC/assistanceRedux';
-import { ADD_TODO, TOGGLE_TODO } from '@/redux/actionsTypes';
+import { addTodo, toggleTodo } from '@/redux/actions';
+import mapStateToProps from '@/assets/javascript/mapStateToProps';
 
 
-const H1=  connect()(function ( props ) {
+const H1 = connect()( function ( props ) {
 
    console.log( props );
-   return <h1> 会不会跟新 </h1>
+   return <h1> 会不会跟新 </h1>;
 
-})
+} );
 
-
-
-@connect( function ( state, ownProps) {
-
-   console.log( ownProps );
-
-   return state
-
-} )
-@assistanceRedux
+@connect( mapStateToProps( 'todos' ), { addTodo, toggleTodo } )
 export default class Reducer extends React.Component {
 
    render() {
 
-      const { todos } = this.props;
+      const {
+         todos,
+         addTodo: onAddTodo,
+         toggleTodo: onToggleTodo
+      } = this.props;
 
       console.log( this );
-
       return (
          <div>
             <Fieldset title={<h2>redux</h2>}>
                <a href='http://cn.redux.js.org/' target='_blank'> 寻找失去的官网</a>
+               <a href='https://www.cntofu.com/book/4/index.html' target='_blank'> 中文文档 </a>
                <Fieldset title='测试区'>
-                  <button onClick={ ()=> this.commit( 'ADD_TODO', { text: 123 } ) }>添加</button>
+                  <button onClick={ ()=> onAddTodo( 123 ) }>添加</button>
 
                   {
                      todos.map( ( todo, index ) =>
                         <React.Fragment key={ index }>
                            <input
                               type='checkbox'
-                              onChange={() => this.commit( 'TOGGLE_TODO', { index } )}
+                              onChange={() => onToggleTodo( index )}
                               defaultChecked={ todo.completed }/>
-                           <label >{ todo.text } { '_' +  todo.completed }</label>
+                           <label >{ todo.text } { '_' + todo.completed }</label>
                         </React.Fragment>
                      )
                   }
@@ -58,13 +54,18 @@ export default class Reducer extends React.Component {
 }
 
 function fn() {
-   console.log( this.length )
+
+   console.log( this.length );
+
 }
 
-var o  = {
+var o = {
    length: 5,
-   payload: function (fn) {
-      arguments[0]()
+   payload: function ( fn ) {
+
+      arguments[0]();
+
    }
 };
-o.payload(fn, 1)
+
+o.payload( fn, 1 );
