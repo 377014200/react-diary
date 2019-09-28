@@ -1,7 +1,10 @@
-import React, { Component } from 'react';
+import { Component } from 'react';
+import { BrowserRouter, Prompt } from 'react-router-dom';
+import { hot } from 'react-hot-loader';
+import './rhlConfig';
+
 import Router from 'router/Router';
 import Sidebar from 'view/sidebar/Sidebar';
-import { BrowserRouter, Prompt } from 'react-router-dom';
 import 'CSS/global.css';
 import 'assets/css/app-style.css';
 
@@ -18,6 +21,7 @@ function setConfirmation( message, callback ) {
    callback( true );
 
 }
+@hot( module )
 export default class App extends Component {
 
    render() {
