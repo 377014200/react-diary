@@ -21,6 +21,12 @@ module.exports = {
   'globals': {
     'Atomics': 'readonly',
     'SharedArrayBuffer': 'readonly',
+     'displayName': 'readonly',
+     'PropTypes': 'readonly',
+     'contextTypes': 'readonly',
+     'childContextTypes': 'readonly',
+     'React': 'readonly',
+
   },
   'parser': '@typescript-eslint/parser',
   'parserOptions': {
@@ -37,6 +43,15 @@ module.exports = {
   'rules': {
      // jsx
      "jsx-quotes": ["error", "prefer-single"],
+     "react/jsx-closing-bracket-location": 1,//有多行属性的话, 新建一行关闭标签,为JSX语法使用下列的对齐方式
+     "react/jsx-boolean-value": 1,//当属性值等于true的时候，省略该属性的赋值
+     // "react/wrap-multilines": 1, //使用括号包裹多行JSX标签
+     "react/self-closing-comp": 1,//当标签没有子元素的时候，始终使用自闭合的标签
+     "react/no-deprecated":1,//不使用弃用的方法
+     "react/jsx-no-undef":1,//在jsx中禁止未声明的变量
+     "react/jsx-no-duplicate-props": 1,//防止在jsx中重复的props
+
+
 
      //js
      "no-alert": 0,//禁止使用alert confirm prompt
@@ -131,7 +146,7 @@ module.exports = {
      "no-unneeded-ternary": 2,//禁止不必要的嵌套 var isYes = answer === 1 ? true : false;
      "no-unreachable": 2,//不能有无法执行的代码
      "no-unused-expressions": 2,//禁止无用的表达式
-     "no-unused-vars": [1, {"vars": "all", "args": "after-used"}],//不能有声明后未被使用的变量或参数
+     "no-unused-vars": [1, {"vars": "all", "args": "after-used", "varsIgnorePattern": "[QWERTUIOPASDFGHJKLZXCVBNM]"}],//不能有声明后未被使用的变量或参数
      "no-use-before-define": 2,//未定义前不能使用
      "no-useless-call": 2,//禁止不必要的call和apply
      "no-void": 2,//禁用void操作符
@@ -212,6 +227,7 @@ module.exports = {
      "wrap-iife": [2, "inside"],//立即执行函数表达式的小括号风格
      "wrap-regex": 0,//正则表达式字面量用小括号包起来
      "yoda": [2, "never"],//禁止尤达条件
+     "template-curly-spacing": [1,"always"], // 此规则可根据样式指南强制在花括号对内使用间距
      "require-jsdoc": ["error", { // 给函数加注释说明
         "require": {
            "FunctionDeclaration": false,
