@@ -1,4 +1,5 @@
-import test from './test';
+import visibilityFilter from './visibilityFilter';
+import todos from './todos';
 import { selectorsTypes as ST } from '@/redux/state';
 
 function reducer( actionsManifests, placeholder ) {
@@ -13,6 +14,6 @@ function reducer( actionsManifests, placeholder ) {
 
 }
 export default {
-   [ST.visibilityFilter]: reducer( test, 'SHOW_ALL' ),
-   [ST.todos]: reducer( test, [] )
+   [ST.visibilityFilter]: reducer( visibilityFilter, 'SHOW_ALL' ),
+   [ST.todos]: reducer( todos, [] )
 };
