@@ -26,8 +26,7 @@ if ( module.hot ) {
       ],
       function () {
 
-         console.log( 'Accepting the updated in reduex!' );
-
+         console.log( '[ 欲上青天揽明月 ] : Accepting the updated in reduex!' );
          store.replaceReducer( combineReducers( sliceReducer ) );
 
       }
