@@ -24,7 +24,7 @@ if ( module.hot ) {
 
    module.hot.accept( './view/App.jsx', () => {
 
-      console.log( 'Accepting the updated in react!' );
+      console.log( '[ 欲上青天揽明月 ] : Accepting the updated in react!' );
       render( App );
 
    } );
