@@ -1,44 +1,45 @@
 import * as AT from '../actionsTypes';
-import { selectorsTypes as ST } from '../state';
 
 // 如何你理解 不可变 数据,  你就可以驾驭它;
+// state 是不应该改变的只能拷贝然后返回一个新的 state
 export default {
-   [ST.visibilityFilter]( state = 'SHOW_ALL', action ) {
+   // ST.visibilityFilter
+   [AT.SET_VISIBILITY_FILTER]( { state, action } ) {
 
       const visibilityArray = ['SHOW_ALL', 'SHOW_COMPLETED', 'SHOW_ACTIVE'];
 
-      return {
-         [AT.SET_VISIBILITY_FILTER]: visibilityArray.includes( action.filter ) ? action.filter : state
-      } [ action.type ] || state;
+      return visibilityArray.includes( action.filter ) ? action.filter : state;
 
    },
-   [ST.todos]( state = [], action ) {
 
-      return {
-         [AT.ADD_TODO]: [
-            ...state,
-            {
-               text: action.text,
-               completed: false
-            }
-         ],
-         [AT.TOGGLE_TODO]: state.map( ( todo, index ) => {
+   // ST.todos
+   [AT.ADD_TODO]( { state, action } ) {
 
-            if ( index === action.index ) {
+      return [
+         ...state,
+         {
+            text: action.text,
+            completed: false
+         }
+      ];
 
-               return Object.assign( {}, todo, {
-                  completed: !todo.completed
-               } );
+   },
+   [AT.TOGGLE_TODO]( { state, action } ) {
 
-            }
-            return todo;
+      return state.map( ( todo, index ) => {
 
-         } )
+         if ( index === action.index ) {
 
-      } [ action.type ] || state;
+            return Object.assign( {}, todo, {
+               completed: !todo.completed
+            } );
+
+         }
+         return todo;
+
+      } );
 
    }
 };
-
 
 
