@@ -1,12 +1,12 @@
-import Vertical from "@/view/propTypesChecking/typescript/PropsTypesTs";
-import Fieldset from "@/components/Fieldset";
-import Array from '@/view/propTypesChecking/prop-types/Array'
-import Code from "@/components/Code";
-import { codeCard, codeCard1} from "@/view/propTypesChecking/codeCard";
-import ArrayOf from "@/view/propTypesChecking/prop-types/ArrayOf";
-import ObjectOf from "@/view/propTypesChecking/prop-types/ObjectOf";
-import Shape from "@/view/propTypesChecking/prop-types/Shape";
-import Exact from "@/view/propTypesChecking/prop-types/Exact";
+import Vertical from '@/view/propTypesChecking/typescript/PropsTypesTs';
+import Fieldset from '@/components/Fieldset';
+import Array from '@/view/propTypesChecking/prop-types/Array';
+import Code from '@/components/Code';
+import { codeCard, codeCard1 } from '@/view/propTypesChecking/codeCard';
+import ArrayOf from '@/view/propTypesChecking/prop-types/ArrayOf';
+import ObjectOf from '@/view/propTypesChecking/prop-types/ObjectOf';
+import Shape from '@/view/propTypesChecking/prop-types/Shape';
+import Exact from '@/view/propTypesChecking/prop-types/Exact';
 
 
 export default function () {
@@ -24,14 +24,14 @@ export default function () {
 
             <Fieldset title='测试区域'>
                <p>PropTypes.array</p>
-               <Array optionsArray={ ['欲','上','青','天','揽','明','月'] }/>
+               <Array optionsArray={ ['欲', '上', '青', '天', '揽', '明', '月'] }/>
                <p>PropTypes.arrayOf(PropTypes.number)</p>
-               <ArrayOf optionalArrayOf={ [1,2,3,4,5,6] }/>
+               <ArrayOf optionalArrayOf={ [1, 2, 3, 4, 5, 6] }/>
                <p>PropTypes.objectOf(PropTypes.string),</p>
                <ObjectOf optionalObjectOf={ { string: '为美好的世界献上祝福' } } />
                <p>PropTypes.shape()</p>
                <Shape
-                  optionalObjectWithshape={{ color: '#bc26fa', fontWeight: 700}}
+                  optionalObjectWithshape={{ color: '#bc26fa', fontWeight: 700 }}
                   optionalObjectOf={ { string: '为美好的世界献上祝福' } }
                />
                <p>PropTypes.exact()</p>
@@ -39,6 +39,6 @@ export default function () {
             </Fieldset>
          </Fieldset>
       </Fieldset>
-   )
+   );
 
 }

@@ -1,8 +1,7 @@
 import { Component } from 'react';
-import Fieldset from "@/components/Fieldset";
+import Fieldset from '@/components/Fieldset';
 
-
-export default class Array extends Component{
+export default class Array extends Component {
 
    static defaultProps = {
       optionsArray: []
@@ -11,9 +10,9 @@ export default class Array extends Component{
       optionsArray: PropTypes.array.isRequired,
    };
 
-   render(){
+   render() {
 
-      return <Fieldset>{ (this.props.optionsArray).join('--')}</Fieldset>
+      return <Fieldset>{ this.props.optionsArray.join( '--' )}</Fieldset>;
 
    }
 
