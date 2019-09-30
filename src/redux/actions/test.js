@@ -1,4 +1,4 @@
-import * as type from '../actionsTypes';
+import * as AT from '../actionsTypes';
 
 
 // 如何你是异步操作必须返回一个函数, 函数的参数是 dispatch;
@@ -9,7 +9,7 @@ export function addTodoAsync ( value ) {
       setTimeout( function () {
 
          dispatch( {
-            type: type.ADD_TODO,
+            type: AT.ADD_TODO,
             text: value
          } );
 
@@ -20,18 +20,18 @@ export function addTodoAsync ( value ) {
 }
 export function addTodo ( value ) {
 
-   return { type: type.ADD_TODO, text: value };
+   return { type: AT.ADD_TODO, text: value };
 
 }
 
 export function toggleTodo( index ) {
 
-   return { type: type.TOGGLE_TODO, index };
+   return { type: AT.TOGGLE_TODO, index };
 
 }
 
 export function setVisibilityFilter( filter ) {
 
-   return { type: type.SET_VISIBILITY_FILTER, filter };
+   return { type: AT.SET_VISIBILITY_FILTER, filter };
 
 }
