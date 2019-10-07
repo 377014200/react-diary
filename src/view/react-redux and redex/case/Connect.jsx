@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import { addTodoAsync } from '@/redux/actions';
 import mapStateToProps from '@/assets/javascript/mapStateToProps';
 
-@connect( mapStateToProps( 'todos', 'visibilityFilter' ), { addTodoAsync } )
+@connect( mapStateToProps( ['todos', 'visibilityFilter'] ), { addTodoAsync } )
 export class MapDispatchToProps extends React.PureComponent {
 
    render() {
