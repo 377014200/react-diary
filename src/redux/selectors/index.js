@@ -8,7 +8,7 @@ function reducer( actionsManifests, placeholder ) {
 
       const commit = actionsManifests[action.type ];
 
-      return commit ? commit( { state, action } ) : state;
+      return commit instanceof Function ? commit( { state, action } ) : state;
 
    };
 
