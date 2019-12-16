@@ -13,3 +13,4 @@ selenium-debug.log
 .netlify
 .*.dockerfile
 pom.xml
+package-lock.json
