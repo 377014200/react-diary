@@ -5,28 +5,22 @@ import { AppContainer } from 'react-hot-loader';
 
 import App from './view/App.jsx';
 const render = function ( Component ) {
-
    const RootApp = (
       <AppContainer>
-         <Provider store={store}>
+         <Provider store={ store }>
             <Component />
          </Provider>
       </AppContainer>
    );
 
    ReactDOM.render( RootApp, document.getElementById( 'root' ) );
-
 };
 
 render( App );
 
 if ( module.hot ) {
-
    module.hot.accept( './view/App.jsx', () => {
-
       console.log( '[ 欲上青天揽明月 ] : Accepting the updated in react!' );
       render( App );
-
    } );
-
 }
